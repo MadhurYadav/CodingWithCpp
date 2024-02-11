@@ -1,0 +1,63 @@
+1. auto Storage Class
+    The auto storage class is the default class of all the variables declared inside a block. The auto stands for automatic and all the local variables that are declared in a block automatically belong to this class.
+
+    Properties of auto Storage Class Objects
+    Scope: Local
+    Default Value: Garbage Value
+    Memory Location: RAM
+    Lifetime: Till the end of its scope
+
+
+2. extern Storage Class
+    The extern storage class simply tells us that the variable is defined elsewhere and not within the same block where it is used (i.e. external linkage). Basically, the value is assigned to it in a different block and this can be overwritten/changed in a different block as well. An extern variable is nothing but a global variable initialized with a legal value where it is declared in order to be used elsewhere.
+
+    A normal global variable can be made extern as well by placing the ‘extern’ keyword before its declaration/definition in any function/block. The main purpose of using extern variables is that they can be accessed between two different files which are part of a large program.
+
+    Properties of extern Storage Class Objects
+    Scope: Global
+    Default Value: Zero
+    Memory Location: RAM
+    Lifetime: Till the end of the program.
+
+
+3. static Storage Class
+    The static storage class is used to declare static variables which are popularly used while writing programs in C++ language. Static variables have the property of preserving their value even after they are out of their scope! Hence, static variables preserve the value of their last use in their scope.
+
+    We can say that they are initialized only once and exist until the termination of the program. Thus, no new memory is allocated because they are not re-declared. Global static variables can be accessed anywhere in the program.
+
+    Properties of static Storage Class
+    Scope: Local
+    Default Value: Zero
+    Memory Location: RAM
+    Lifetime: Till the end of the program
+
+
+4. register Storage Class
+    The register storage class declares register variables using the ‘register’ keyword which has the same functionality as that of the auto variables. The only difference is that the compiler tries to store these variables in the register of the microprocessor if a free register is available. This makes the use of register variables to be much faster than that of the variables stored in the memory during the runtime of the program. If a free register is not available, these are then stored in the memory only. 
+
+    An important and interesting point to be noted here is that we cannot obtain the address of a register variable using pointers.
+
+    Properties of register Storage Class Objects
+    Scope: Local
+    Default Value: Garbage Value
+    Memory Location: Register in CPU or RAM
+    Lifetime: Till the end of its scope
+
+
+5. mutable Storage Class
+    Sometimes there is a requirement to modify one or more data members of class/struct through the const function even though you don’t want the function to update other members of class/struct. This task can be easily performed by using the mutable keyword. The keyword mutable is mainly used to allow a particular data member of a const object to be modified. 
+
+    When we declare a function as const, this pointer passed to the function becomes const. Adding a mutable to a variable allows a const pointer to change members.
+
+    Properties of mutable Storage Class
+    The mutable specifier does not affect the linkage or lifetime of the object. It will be the same as the normal object declared in that place.
+
+
+6. thread_local Storage Class
+    The thread_local Storage Class is the new storage class that was added in C++11. We can use the thread_local storage class specifier to define the object as thread_local. The thread_local variable can be combined with other storage specifiers like static or extern and the properties of the thread_local object changes accordingly.
+
+    Properties of thread_local Storage Class
+    Memory Location: RAM
+    Lifetime: Till the end of its thread
+    
+    #include <thread>

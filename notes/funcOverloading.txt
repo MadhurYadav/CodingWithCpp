@@ -1,0 +1,36 @@
+Function overloading in C++ refers to the ability to define multiple functions in the same scope with the same name but different parameter lists. The compiler can then determine which version of the function to call based on the number and types of arguments provided during a function call. Function overloading allows you to use the same function name for different behaviors, providing a way to create more readable and intuitive code.
+
+Rules for Function Overloading:
+    1. Same Function Name: All overloaded functions must have the same name.
+
+    2. Different Parameter Lists: The parameter lists must differ either in the number of parameters or in the types of parameters. The return type alone is not sufficient to distinguish overloaded functions.
+
+    3. Return Type Doesn't Matter: Overloaded functions can have the same or different return types. The compiler uses the parameter list to determine which function to call.
+
+    4. Default Arguments: Function overloading can also work in conjunction with default arguments, allowing you to provide default values for some parameters.
+
+
+How compiler determines appropoate function
+
+    When a function is called, the compiler determines which function to invoke based on the arguments provided in the function call. The process of selecting the appropriate function is known as function resolution or function overloading resolution. Here's how it works:
+
+    1. Number of Arguments:
+
+        The compiler looks at the number of arguments provided in the function call.
+        It narrows down the options to the set of overloaded functions with the same number of parameters.
+
+    2. Argument Types:
+
+        For the set of functions with the same number of parameters, the compiler compares the types of the arguments.
+        It selects the overloaded function whose parameter types match the types of the provided arguments most closely.
+
+    3. Exact Match vs. Conversions:
+
+        If there is an exact match in parameter types, that function is chosen.
+        If there is no exact match, the compiler looks for the closest match by considering standard type conversions.
+        The compiler may perform implicit conversions, such as converting an int to a double or promoting a float to a double.
+
+    4. Default Arguments:
+
+        If there are default arguments in the parameter list, the compiler may use them to resolve the function call.
+        It tries to find the best match by providing values for missing arguments using default values.

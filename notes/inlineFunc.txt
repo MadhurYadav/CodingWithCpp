@@ -1,0 +1,25 @@
+Advantages of Inline Functions:
+    Performance Improvement: Inline functions can lead to performance improvements by avoiding the overhead of function calls, especially for small and frequently used functions. The elimination of the function call overhead can result in faster execution.
+
+    Reduced Function Call Overhead: Since the function is expanded at the point of call, it eliminates the need to push and pop parameters and the return address onto and from the call stack, which can be beneficial for certain scenarios.
+
+    Compiler Optimization Opportunities: Inline functions provide more opportunities for the compiler to optimize the code, as the function body is directly available during the compilation process.
+
+Guidelines for Using Inline Functions:
+    Small Functions: Inline functions are most effective for small, frequently used functions. Larger functions may not benefit as much and could result in code bloat.
+
+    Avoid Heavy Computations: Avoid using inline functions for functions with heavy computations, as the inline expansion could lead to larger executable size.
+
+    Header-Only Libraries: Inline functions are commonly used in header-only libraries, where the function definitions are included directly in the header files.
+
+    Profile Before Optimization: Before making functions inline for performance reasons, it's important to profile the code to identify bottlenecks and areas where inlining can make a significant impact.
+
+    Don't use with Static Variable:
+        Lifetime Issues: Inline functions can lead to multiple instances of static variables in different translation units (source files) if the inline function is defined in a header file included by multiple source files. Each source file will have its own copy of the static variables, which might not be the intended behavior.
+
+        Violation of One-Definition Rule (ODR): The One-Definition Rule states that there should be only one definition of an entity in the entire program. If a static variable is defined in an inline function in a header file and included in multiple translation units, it can violate the ODR.
+
+    Avoid with recursion:
+        Inlining Recursive Calls: Inlining recursive functions can result in code bloat, as each recursive call would be expanded in place, potentially leading to a large amount of duplicated code.
+
+        Stack Overflow Risk: Recursive functions typically rely on the function call stack, and inlining them could increase the risk of stack overflow, especially for deep or infinite recursion.

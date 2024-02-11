@@ -1,0 +1,29 @@
+1. Call By Value
+    - While calling a function, we pass the values of variables to it. Such functions are known as “Call By Values”.
+
+    - In this method, the value of each variable in the calling function is copied into corresponding dummy variables of the called function.
+
+    - With this method, the changes made to the dummy variables in the called function have no effect on the values of actual variables in the calling function
+
+    - In call-by-values, we cannot alter the values of actual variables through function calls.
+
+    - Values of variables are passed by the Simple technique.
+
+    - This method is preferred when we have to pass some small values that should not change.
+
+    - Call by value is considered safer as original data is preserved
+
+2. Call By Refrence
+    - While calling a function, instead of passing the values of variables, we pass the address of variables(location of variables) to the function known as “Call By References.
+
+    - In this method, the address of actual variables in the calling function is copied into the dummy variables of the called function.
+
+    - With this method, using addresses we would have access to the actual variables and hence we would be able to manipulate them.
+
+    - In call by reference, we can alter the values of variables through function calls.
+
+    - Pointer variables are necessary to define to store the address values of variables.
+
+    - This method is preferred when we have to pass a large amount of data to the function.
+
+    - Call by reference is risky as it allows direct modification in original data
