@@ -28,6 +28,23 @@ struct MyStruct{
     char member3;
 };
 
+struct VarDec{
+    int x;
+    int y = 12;
+}var;
+
+
+struct Array{
+    int a,b;
+}arr[10];
+
+
+
+struct Pointer{
+    int p, q;
+};
+
+
 int main() {
 
     // Case 1: Understanding Struct
@@ -37,9 +54,11 @@ int main() {
     // or
     MyStruct example;
 
-    example.member1 = 1;
-    example.member2 = 92.1;
-    example.member3 = 'L';
+    example = {1, 92.1, 'L'};
+
+    // example.member1 = 1;
+    // example.member2 = 92.1;
+    // example.member3 = 'L';
 
     cout<<example.member1<<" "<<example.member2<<" "<<example.member3<<endl;
 
@@ -64,6 +83,36 @@ int main() {
     val.y = 40;
 
     cout<<val.x<<" "<<val.y<<" "<<endl;
+
+
+    // Case3: Declare Structure with Variable
+
+    var.x = 15;
+    cout<<var.x<<endl;
+    cout<<var.y<<endl;
+
+    // Case4: Array of Structure
+    arr[0].a = 10;
+    arr[1].a = 15;
+    arr[0].b = 20;
+
+    cout <<arr[0].a<<" "<<arr[1].a<<" "<< arr[0].b<<endl;
+
+    // Case4: Structure Pointer
+
+    Pointer p1 = {1,2};
+    
+    // p2 is a pointer to structure p1
+    struct Pointer* p2;
+    p2 = &p1;
+
+    // Accessing structure members using structure pointer
+
+    cout<<p2->p<<" "<<p2->q<<endl;
+
+    
+
+
 
     return 0;
 }
