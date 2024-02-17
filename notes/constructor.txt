@@ -1,0 +1,47 @@
+
+What is Constructor?
+    • Constructor in C++ is a special method that is invoked automatically at the time of object creation. 
+
+    • Constructor is a member function of a class, whose name is same as the class name.
+
+    • Constructor is a special type of member function that is used to initialize the data members for an object of a class automatically, when an object of the same class is created.
+
+    • Constructor is invoked at the time of object creation. It constructs the values i.e. provides data for the object that is why it is known as constructor.
+
+    • Constructor do not return value, hence they do not have a return type.
+
+
+    Constructor can be defined inside the class declaration or outside the class declaration
+    a.    Syntax for defining the constructor within the class
+            <class-name>(list-of-parameters)
+            {
+                    //constructor definition
+            }
+    b.    Syntax for defining the constructor outside the class
+            <class-name>: :<class-name>(list-of-parameters)
+            {
+                    //constructor definition
+            }
+
+
+Characteristics of constructor
+    • The name of the constructor is same as its class name.
+
+    • Constructors are mostly declared in the public section of the class though it can be declared in the private section of the class.
+
+    • Constructors do not return values; hence they do not have a return type.
+
+    • A constructor gets called automatically when we create the object of the class.
+
+    • Constructors can be overloaded.
+
+    • Constructor can not be declared virtual.
+
+
+Types of constructor 
+    • Default constructor
+    • Parameterized constructor
+    • Overloaded constructor
+    • Constructor with default value
+    • Copy constructor
+    • Inline constructor
